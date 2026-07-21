@@ -16,7 +16,6 @@ class WeatherModel {
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(
       cityName: json['name'],
-      // OpenWeatherMap gives temp in Kelvin/Celsius, we convert it safely to double
       temperature: (json['main']['temp'] as num).toDouble(),
       mainCondition: json['weather'][0]['main'],
       humidity: json['main']['humidity'],
